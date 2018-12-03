@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Fruit Store</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Welcome to The Fruit Store</h1>
+        <p>Your Dojo has entered into an agreement with a local fruit provider.</p>
+        <p>Use this app to order whatever fruits you would like!</p>
+    </div>
+    <div class="main">
+        <div class="container">
+            <h2>
+                Use this form to place your fruit order!
+            </h2>
+            <form action="/checkout" method="post">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Fruit</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                        <tr>
+                            <td>Strawberries</td>
+                            <td>
+                                <select name="strawberries" class="form-control" id="exampleFormControlSelect2">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                            </td>
+                            <td>$3.99</td>
+                        </tr>
+                        <tr>
+                            <td>Apricots</td>
+                            <td>
+                                <select name="apricots" class="form-control" id="exampleFormControlSelect2">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                            </td>
+                            <td>$4.99</td>
+                        </tr>
+                        <tr>
+                            <td>Grapes</td>
+                            <td>
+                                <select name="grapes" class="form-control" id="exampleFormControlSelect2">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                            </td>
+                            </td>
+                            <td>$2.99</td>
+                        </tr>
+                        <tr>
+                            <td>Apples</td>
+                            <td>
+                                <select name="apples" class="form-control" id="exampleFormControlSelect2">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                            </td>
+                            </td>
+                            <td>$3.99</td>
+                        </tr>
+                        <tr>
+                            <td>Pineapples</td>
+                            <td>
+                                <select name="pineapples" class="form-control" id="exampleFormControlSelect2">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                            </td>
+                            </td>
+                            <td>$4.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>
+                    Please enter your information
+                </h2>
+                <div class="form-group">
+                    <label>Your name</label>
+                    <input name="name" class="form-control" type="text">
+                    <label>Your email address</label>
+                    <input name="email" class="form-control" type="email">
+                    <label>Your student ID</label>
+                    <input name="student_id" class="form-control" type="student_id">
+                </div>
+                <button class="btn btn-block btn-dark" type="submit">Submit your order!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Thanks for your purchase!</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>
+            The Fruit Store
+        </h1>
+    </div>
+    <h2 id="center">
+        Thanks for your order!
+    </h2>
+    <div class="receipt">
+        <table class="table table-dark table-striped center">
+            <thead>
+                <tr>
+                    <th colspan="3">Digital Receipt</th>
+                </tr>
+                <tr>
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th class="right">
+                        Unit Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if values.strawberries != "0" %}
+                <tr>
+                    <td>Strawberries</td>
+                    <td>{{ values.strawberries }}</td>
+                    <td>${{ values.strawberries|int * 3.99 }}</td>
+                </tr>
+                {% endif %}
+                {% if values.apricots != "0" %}
+                <tr>
+                    <td>Apricots</td>
+                    <td>{{ values.apricots }}</td>
+                    <td>${{ values.apricots|int * 4.99 }}</td>
+                </tr>
+                {% endif %}
+                {% if values.grapes != "0" %}
+                <tr>
+                    <td>Grapes</td>
+                    <td>{{ values.grapes }}</td>
+                    <td>${{ values.grapes|int * 2.99 }}</td>
+                </tr>
+                {% endif %}
+                {% if values.apples != "0" %}
+                <tr>
+                    <td>Apples</td>
+                    <td>{{ values.apples }}</td>
+                    <td>${{values.apples|int * 2.99}}</td>
+                </tr>
+                {% endif %}
+                {% if values.pineapples != "0" %}
+                <tr>
+                    <td>Pineapples</td>
+                    <td>{{ values.pineapples }}</td>
+                    <td>${{ values.pineapples|int * 4.99 }}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td>${{ (values.strawberries|int * 3.99) + (values.apricots|int * 4.99) + (values.grapes|int * 2.99) + (values.apples|int * 3.99) + (values.pineapples|int * 4.99)}}</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th colspan="3">Your information</td>
+                </tr>
+                <tr>
+                    <td>Your name</td>
+                    <td>{{ values.name }}</td>
+                </tr>
+                <tr>
+                    <td>Your email address</td>
+                    <td>{{values.email}}</td>
+                </tr>
+                <tr>
+                    <td>Your student ID</td>
+                    <td>{{values.student_id}}</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="receipt">
+        <a class="btn btn-block btn-dark center" href="/">Go back</a>
+    </div>
+</body>
+</html>
